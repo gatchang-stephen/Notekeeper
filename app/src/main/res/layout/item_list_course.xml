@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:cardBackgroundColor="#F4FCFD"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
@@ -24,37 +24,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_assignment_24"
+                app:layout_constraintEnd_toEndOf="@+id/textCourse"
+                app:layout_constraintStart_toStartOf="@+id/textCourse"
+                app:layout_constraintTop_toBottomOf="@+id/textCourse"
+                app:srcCompat="@drawable/ic_menu_slideshow"
                 app:tint="@color/pluralsightOrange" />
 
             <TextView
                 android:id="@+id/textCourse"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/text_view"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/pluralsightOrange"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/text_view"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textCourse"
-                app:layout_constraintTop_toBottomOf="@+id/textCourse" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>
