@@ -95,5 +95,13 @@ object DataManager {
 
     }
 
+    fun loadNotes(): List<NoteInfo> {
+        simulateLoadDelay()
+        return notes
+    }
+
+    private fun simulateLoadDelay() {
+        Thread.sleep(1000)
+    }
 
 }

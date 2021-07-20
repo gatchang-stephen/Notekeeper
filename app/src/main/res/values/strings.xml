@@ -31,5 +31,6 @@
     <string name="icon">Icon</string>
     <string name="title_activity_items">ItemsActivity</string>
     <string name="note_activity">Edit Note</string>
+    <string name="recently_notes">Recently Notes</string>
 
 </resources>

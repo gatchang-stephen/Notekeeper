@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class NoteRecyclerViewAdapter(private val notes: List<NoteInfo>) :
     RecyclerView.Adapter<NoteRecyclerViewAdapter.ViewHolder>() {
+    private var onNoteSelectedListener: OnNoteSelectedListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -28,6 +29,10 @@ class NoteRecyclerViewAdapter(private val notes: List<NoteInfo>) :
 
     override fun getItemCount() = notes.size
 
+    fun setOnSelectedListener(listener: OnNoteSelectedListener) {
+        onNoteSelectedListener = listener
+    }
+
     inner class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         val textCourse = itemView?.findViewById<TextView>(R.id.textCourse)
         val textTitle = itemView?.findViewById<TextView>(R.id.textTitle)
@@ -35,6 +40,7 @@ class NoteRecyclerViewAdapter(private val notes: List<NoteInfo>) :
 
         init {
             itemView?.setOnClickListener {
+                onNoteSelectedListener?.onNoteSelected(notes[notePosition])
 //                Toast.makeText(itemView.context," Item clicked", Toast.LENGTH_SHORT).show()
 //                val intent = Intent(itemView.context, NoteActivity::class.java)
 //                intent.putExtra(NOTE_POSITION, notePosition)
@@ -48,5 +54,9 @@ class NoteRecyclerViewAdapter(private val notes: List<NoteInfo>) :
         }
 
 
+    }
+
+    interface OnNoteSelectedListener {
+        fun onNoteSelected(note: NoteInfo)
     }
 }
